@@ -1,0 +1,41 @@
+manifest: 1.2.0
+
+defaultLogLevel: DEBUG
+
+cluster:
+  id: {{ cluster }}
+  size: small
+namespace: {{ namespace }}
+
+filterGroups:
+  - id: default
+    updateStrategy: preserve
+    description: This default filter group is used for all indexers to capture
+      contract addresses you care about.
+    addresses:
+      - fromFile: ./contracts.csv
+
+indexers:
+  {{#indexers}}
+  - chainId: {{chainId}}
+    enabled: {{enabled}}
+    ingestionFilterGroup: {{ingestionFilterGroup}}
+    processingFilterGroup: {{processingFilterGroup}}
+    sources:
+      - endpoint: {{{sources.endpoint1}}}
+      - endpoint: {{{sources.endpoint2}}}
+  {{/indexers}}
+
+processors:
+  - id: v3-pool-swap
+    abi: ./src/mappings/pool/swap/abi.json
+    handler: ./src/mappings/pool/swap/handler.ts
+
+enrichers:
+  - id: v3-pool-fee-collected-cumulative
+    inputSql: ./src/aggregation/pool/fee-collected-cumulative/input.sql
+    handler: ./src/aggregation/pool/fee-collected-cumulative/handler.ts
+
+workers:
+  - schedule: rate(60 minutes)
+    enricher: v3-pool-fee-collected-cumulative
