@@ -1,9 +1,10 @@
 import { refreshPool } from '../functions/pool';
+import { EventHandlerInput } from 'flair-sdk';
 
-exports.processEvent = function (event: any, callback: (res: any, error: any) => void) {
-  (async () => {
+export const processEvent = async (event: EventHandlerInput) => {
+  try {
     await refreshPool(event);
-  })()
-    .then((res) => callback(res, null))
-    .catch((error) => callback(null, error));
+  } catch (error) {
+    throw error;
+  }
 };

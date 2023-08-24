@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^10.0.0
     version: 10.0.0(eslint@8.43.0)
   flair-sdk:
-    specifier: ^1.1.11
-    version: 1.1.11(typescript@5.1.6)
+    specifier: ^1.1.10
+    version: 1.1.10(typescript@5.1.6)
   mustache:
     specifier: ^4.2.0
     version: 4.2.0
@@ -709,8 +709,8 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /flair-sdk@1.1.11(typescript@5.1.6):
-    resolution: {integrity: sha512-pieH5/gKLKSPS+ws/5/Zi+3IWbXzUdbJwbozZ3ZBRzenK5n389BKvMgzAy3RzKsBDIkZu4r63l4hXoxPSvMxaA==}
+  /flair-sdk@1.1.10(typescript@5.1.6):
+    resolution: {integrity: sha512-l7KiscDz5l7D5O8ktrVG50WM68tuL2DHT+KD22xvwbDlf3zl1MzuOcdyoq08j9yStqwym8kHwmly5Hk7kU8Jdw==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:

@@ -23,7 +23,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "flair-sdk": "^1.1.11",
+    "flair-sdk": "^1.1.10",
     "mustache": "^4.2.0",
     "prettier": "^2.8.8",
     "typescript": "^5.1.6"
