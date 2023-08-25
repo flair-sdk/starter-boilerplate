@@ -2,15 +2,15 @@
   "cluster": "prod",
   "namespace": "boilerplate-prod",
   "indexers": [
-  {
-    "chainId": 1,
-    "enabled": false,
-    "ingestionFilterGroup": "topics",
-    "processingFilterGroup": "addresses",
-    "sources": {
-      "endpoint1": "wss://chain-1.rpc.internal.flair.build",
-      "endpoint2": "https://chain-1.rpc.internal.flair.build"
+    {
+      "chainId": 1,
+      "enabled": false,
+      "ingestionFilterGroup": "topics",
+      "processingFilterGroup": "addresses",
+      "sources": {
+        "endpoint1": "wss://chain-1.rpc.internal.flair.build",
+        "endpoint2": "https://chain-1.rpc.internal.flair.build"
+      }
     }
-  }
-]
+  ]
 }

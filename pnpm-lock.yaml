@@ -14,6 +14,9 @@ dependencies:
   ethers:
     specifier: ^6.7.0
     version: 6.7.0
+  flair-sdk:
+    specifier: ^1.1.11
+    version: 1.1.11(typescript@5.1.6)
 
 devDependencies:
   '@types/node':
@@ -34,9 +37,6 @@ devDependencies:
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
     version: 10.0.0(eslint@8.43.0)
-  flair-sdk:
-    specifier: ^1.1.10
-    version: 1.1.10(typescript@5.1.6)
   mustache:
     specifier: ^4.2.0
     version: 4.2.0
@@ -68,8 +68,8 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@eslint-community/regexpp@4.7.0:
-    resolution: {integrity: sha512-+HencqxU7CFJnQb7IKtuNBqS6Yx3Tz4kOL8BJXo+JyeiBm5MEX6pO8onXDkjrkCRlfYXS1Axro15ZjVFe9YgsA==}
+  /@eslint-community/regexpp@4.8.0:
+    resolution: {integrity: sha512-JylOEEzDiOryeUnFbQz+oViCXS0KsvR1mvHkoMiu5+UiBvy+RYX7tzlIIIEstF/gVa2tj9AQXk3dgnxv6KxhFg==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
@@ -581,7 +581,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.43.0)
-      '@eslint-community/regexpp': 4.7.0
+      '@eslint-community/regexpp': 4.8.0
       '@eslint/eslintrc': 2.1.2
       '@eslint/js': 8.43.0
       '@humanwhocodes/config-array': 0.11.10
@@ -709,8 +709,8 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /flair-sdk@1.1.10(typescript@5.1.6):
-    resolution: {integrity: sha512-l7KiscDz5l7D5O8ktrVG50WM68tuL2DHT+KD22xvwbDlf3zl1MzuOcdyoq08j9yStqwym8kHwmly5Hk7kU8Jdw==}
+  /flair-sdk@1.1.11(typescript@5.1.6):
+    resolution: {integrity: sha512-pieH5/gKLKSPS+ws/5/Zi+3IWbXzUdbJwbozZ3ZBRzenK5n389BKvMgzAy3RzKsBDIkZu4r63l4hXoxPSvMxaA==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
@@ -718,7 +718,7 @@ packages:
         optional: true
     dependencies:
       typescript: 5.1.6
-    dev: true
+    dev: false
 
   /flat-cache@3.0.4:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
@@ -1404,7 +1404,6 @@ packages:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
