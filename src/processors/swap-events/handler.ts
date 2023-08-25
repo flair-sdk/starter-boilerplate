@@ -5,7 +5,6 @@ import { upsertEvent, fetchUsdPrice } from '../../functions/common';
 
 export const processEvent = async (event: EventHandlerInput) => {
   try {
-
     const poolAddress = event.log.address.toString();
     const pool = await getOrCreatePool(event.chainId, poolAddress);
 
