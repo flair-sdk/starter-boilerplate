@@ -30,7 +30,7 @@ pnpm flair auth
 
 `config.dev.json` and `config.prod.json` are sample configs for `dev` and `prod` clusters.
 
-- Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
+Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
 
 ```bash
 # Setting configs for dev testing
