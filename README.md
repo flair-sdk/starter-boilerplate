@@ -1,8 +1,8 @@
 # Indexing Starter Boilerplate
 
-This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data).
+This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data)
 
-### Getting Started <br />
+### Getting Started
 
 <br />
 1️⃣ Clone this repo:
