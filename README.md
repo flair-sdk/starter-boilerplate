@@ -4,12 +4,12 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
+- [Getting Started](#🏁-getting-started)
 - [Examples](#examples)
 - [Next Steps](#next-steps)
 - [FAQ](#faq)
 
-## Getting Started
+## 🏁 Getting Started
 
 <br />
 1️⃣ Clone this repo:
