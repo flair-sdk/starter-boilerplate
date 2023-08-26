@@ -21,9 +21,9 @@ indexers:
     enabled: {{enabled}}
     ingestionFilterGroup: {{ingestionFilterGroup}}
     processingFilterGroup: {{processingFilterGroup}}
-    sources:
-      - endpoint: {{{sources.endpoint1}}}
-      - endpoint: {{{sources.endpoint2}}}
+     {{#sources}}
+      - endpoint: {{{.}}}
+    {{/sources}}
   {{/indexers}}
 
 processors:

@@ -7,10 +7,10 @@
       "enabled": true,
       "ingestionFilterGroup": "default",
       "processingFilterGroup": "default",
-      "sources": {
-        "endpoint1": "wss://chain-1.rpc.internal.flair.build",
-        "endpoint2": "https://chain-1.rpc.internal.flair.build"
-      }
+      "sources": [
+        "wss://chain-1.rpc.internal.flair.build",
+        "https://chain-1.rpc.internal.flair.build"
+      ]
     }
   ]
 }
