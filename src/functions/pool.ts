@@ -11,12 +11,8 @@ export type Pool = Entity<{
   token1Id?: string;
   token0Address: string;
   token1Address: string;
-  protocol: string;
   _name: string;
   fee: number;
-  volumeUsd?: number;
-  liquidityUsd?: number;
-  feeUsd?: number;
   horizon?: string;
 }>
 

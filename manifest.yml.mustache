@@ -27,15 +27,6 @@ indexers:
   {{/indexers}}
 
 processors:
-  - id: v3-pool-swap
-    abi: ./src/mappings/pool/swap/abi.json
-    handler: ./src/mappings/pool/swap/handler.ts
-
-enrichers:
-  - id: v3-pool-fee-collected-cumulative
-    inputSql: ./src/aggregation/pool/fee-collected-cumulative/input.sql
-    handler: ./src/aggregation/pool/fee-collected-cumulative/handler.ts
-
-workers:
-  - schedule: rate(60 minutes)
-    enricher: v3-pool-fee-collected-cumulative
+  - id: swap-events
+    abi: src/processors/swap-events/abi.json
+    handler: src/processors/swap-events/handler.ts

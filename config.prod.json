@@ -5,8 +5,8 @@
     {
       "chainId": 1,
       "enabled": false,
-      "ingestionFilterGroup": "topics",
-      "processingFilterGroup": "addresses",
+      "ingestionFilterGroup": "default",
+      "processingFilterGroup": "default",
       "sources": {
         "endpoint1": "wss://chain-1.rpc.internal.flair.build",
         "endpoint2": "https://chain-1.rpc.internal.flair.build"

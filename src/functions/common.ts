@@ -27,6 +27,7 @@ const fetchUsdPrice = async function ({
 };
 
 async function upsertEvent(event: EventHandlerInput, extraData: any) {
+  
   const provider = await blockchain.getProvider(event.chainId);
   const transaction = await provider
     .cached()
