@@ -4,8 +4,6 @@ This repository contains boilerplate scripts, abis and schema.
 
 ### Getting Started
 
-You can deploy both to `dev` and `prod` clusters:
-
 1. Clone this repo:
 
 ```bash
