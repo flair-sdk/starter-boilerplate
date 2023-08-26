@@ -9,7 +9,6 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 - [Next Steps](#next-steps)
 - [FAQ](#faq)
 
-<br />
 ## Getting Started
 
 <br />
