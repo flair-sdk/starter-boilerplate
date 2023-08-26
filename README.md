@@ -48,7 +48,7 @@ pnpm run deploy
 ```
 
 <br />
-5️⃣ Backfill any of the contracts for certain block range:
+5️⃣ Backfill certain contracts or block ranges:
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
