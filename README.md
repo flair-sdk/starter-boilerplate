@@ -2,7 +2,7 @@
 
 This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data)
 
-# Table of Contents
+## Table of Contents
 
 - [Getting Started](#getting-started)
 - [Examples](#examples)
