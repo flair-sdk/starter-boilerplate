@@ -105,4 +105,4 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 ## FAQ
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
-**A:** For each indexer defined in `config.json` and `manifest.yml`, you can enable/disable it via the `enabled: true/false` flag <br/><br />
+**A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm deploy` for the changes to apply on the cluster. <br/><br />
