@@ -1,27 +1,29 @@
-# Indexing
+# Indexing Starter Boilerplate
 
 This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data).
 
-### Getting Started
+### Getting Started <br />
 
-1. 🧬 Clone this repo:
+🧬 Clone this repo:
 
 ```bash
 git clone git@github.com:flair-sdk/starter-boilerplate.git
 ```
 
-2. 🗝 Install packages and authenticate:
+<br /> 
+🗝 Install packages and authenticate:
 
 ```bash
 pnpm i
 pnpm flair auth
 ```
 
-3. 📄 Set the namespace and config.json:
+<br />
+📄 Set the namespace and config.json:
 
 `config.dev.json` and `config.prod.json` are sample configs for `dev` and `prod` clusters.
 
-* Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
+- Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
 
 ```bash
 # Setting configs for dev testing
@@ -31,13 +33,15 @@ cp config.dev.json config.json
 cp config.prod.json config.json
 ```
 
-4. 🚀 Deploy
+<br />
+🚀 Deploy
 
 ```bash
 pnpm run deploy
 ```
 
-5. 🏭 Backfill any of the contracts for certain block range:
+<br />
+🏭 Backfill any of the contracts for certain block range:
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
@@ -56,7 +60,8 @@ Or backfill for the recent data in the last X minutes:
 pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward
 ```
 
-6. 🔎 Look at the logs:
+<br />
+🔎 Look at the logs:
 
 ```bash
 pnpm flair logs --full -tag Level=warn
