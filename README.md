@@ -1,6 +1,6 @@
 # Indexing
 
-This repository contains boilerplate scripts, abis and schema.
+This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data).
 
 ### Getting Started
 
