@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@ethersproject/bignumber": "^5.7.0",
-    "flair-sdk": "^1.1.11"
+    "flair-sdk": "^1.1.12"
   }
 }

@@ -30,8 +30,7 @@ async function upsertEvent(event: EventHandlerInput, extraData: any) {
   
   const provider = await blockchain.getProvider(event.chainId);
   const transaction = await provider
-    .cached()
-    .getTransactionReceipt(event.txHash);
+    .cached().getTransactionReceipt(event.txHash);
   
     await database.upsert({
       // Entity type is used to group entities together.
