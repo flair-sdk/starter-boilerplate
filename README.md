@@ -21,12 +21,13 @@ pnpm flair auth
 
 `config.dev.json` and `config.prod.json` are sample configs for `dev` and `prod` clusters.
 
-set a globally unique namespace in each config file (recommended to use `ORG_NAME-ENV`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
+* Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
 
 ```bash
-# setting configs for dev testing
+# Setting configs for dev testing
 cp config.dev.json config.json
-# or setting it for production testing
+
+# Or setting it for production
 cp config.prod.json config.json
 ```
 
@@ -104,4 +105,4 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 ## FAQ
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
-**A:** For each indexer defined in `config.json` and `manifest.yml`, you can enable/disable it via the `enabled: true/false` flag <br/><br />
+**A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm deploy` for the changes to apply on the cluster. <br/><br />
