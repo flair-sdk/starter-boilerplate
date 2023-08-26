@@ -32,7 +32,7 @@ cp config.prod.json config.json
 pnpm run deploy
 ```
 
-4. Backfill any of the contracts for certain block range:
+5. Backfill any of the contracts for certain block range:
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
@@ -51,7 +51,7 @@ Or backfill for the recent data in the last X minutes:
 pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward
 ```
 
-5. Look at the logs:
+6. Look at the logs:
 
 ```bash
 pnpm flair logs --full -tag Level=warn
@@ -100,4 +100,4 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 ## FAQ
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
-**A:** For each indexer defined in `config.json` and `manifest.yml`, you can enable/disable it via the `enabled: true/false` flag
+**A:** For each indexer defined in `config.json` and `manifest.yml`, you can enable/disable it via the `enabled: true/false` flag <br/><br />
