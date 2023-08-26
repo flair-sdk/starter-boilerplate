@@ -11,7 +11,6 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 
 ## Getting Started
 
-<br />
 1️⃣ Clone this repo:
 
 ```bash
