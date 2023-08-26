@@ -6,17 +6,17 @@ This repository contains boilerplate scripts, abis and schema.
 
 You can deploy both to `dev` and `prod` clusters:
 
-1. Install latest flair-cli:
+1. Clone this repo:
 
 ```bash
-npm i -g flair-cli
+git clone git@github.com:flair-sdk/starter-boilerplate.git
 ```
 
-2. Authenticate and install packages:
+2. Install packages and authenticate:
 
 ```bash
-flair auth
 pnpm i
+pnpm flair auth
 ```
 
 3. Set the config.json:
@@ -38,28 +38,28 @@ pnpm run deploy
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
-flair backfill --chain 1 --address 0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc -d backward --max-blocks 10000
+pnpm flair backfill --chain 1 --address 0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc -d backward --max-blocks 10000
 ```
 
 Or you can backfill for a specific block number, if you have certain events you wanna test with:
 
 ```bash
-flair backfill --chain 1 -b 17998797
+pnpm flair backfill --chain 1 -b 17998797
 ```
 
 Or backfill for the recent data in the last X minutes:
 
 ```bash
-flair backfill --chain 1 --min-timestamp="5 mins ago"
+pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward
 ```
 
 5. Look at the logs:
 
 ```bash
-flair logs --full -tag Level=warn
-flair logs --full -tag TransactionHash=0xXXXXX
-flair logs --full -tag ProcessorId=swap-events
-flair logs --full -tag ProcessorId=swap-events --watch
+pnpm flair logs --full -tag Level=warn
+pnpm flair logs --full -tag TransactionHash=0xXXXXX
+pnpm flair logs --full -tag ProcessorId=swap-events
+pnpm flair logs --full -tag ProcessorId=swap-events --watch
 ```
 
 ## Examples
@@ -101,5 +101,5 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 
 ## FAQ
 
-**Q:** How do I enable/disable real-time ingestion for indexer?
+**Q:** How do I enable/disable real-time ingestion for indexer? <br />
 **A:** For each indexer defined in `config.json` and `manifest.yml`, you can enable/disable it via the `enabled: true/false` flag
