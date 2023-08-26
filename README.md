@@ -4,14 +4,15 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 
 ### Getting Started <br />
 
-🧬 Clone this repo:
+<br />
+1️⃣ Clone this repo:
 
 ```bash
 git clone git@github.com:flair-sdk/starter-boilerplate.git
 ```
 
 <br /> 
-🗝 Install packages and authenticate:
+2️⃣ Install packages and authenticate:
 
 ```bash
 pnpm i
@@ -19,7 +20,7 @@ pnpm flair auth
 ```
 
 <br />
-📄 Set the namespace and config.json:
+3️⃣ Set the namespace and config.json:
 
 `config.dev.json` and `config.prod.json` are sample configs for `dev` and `prod` clusters.
 
@@ -34,14 +35,14 @@ cp config.prod.json config.json
 ```
 
 <br />
-🚀 Deploy
+4️⃣ Deploy
 
 ```bash
 pnpm run deploy
 ```
 
 <br />
-🏭 Backfill any of the contracts for certain block range:
+5️⃣ Backfill any of the contracts for certain block range:
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
@@ -61,7 +62,7 @@ pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward
 ```
 
 <br />
-🔎 Look at the logs:
+6️⃣ Look at the logs:
 
 ```bash
 pnpm flair logs --full -tag Level=warn
