@@ -8,8 +8,6 @@ export const processEvent = async (event: EventHandlerInput) => {
     const poolAddress = event.log.address.toString();
     const pool = await getOrCreatePool(event.chainId, poolAddress);
 
-    console.log('processEvent', { poolAddress, pool });
-
     // getting usd value of below entities
     const [amount0InUsd, amount1InUsd, amount0OutUsd, amount1OutUsd] =
       await Promise.all([
