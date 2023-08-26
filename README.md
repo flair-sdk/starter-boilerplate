@@ -4,10 +4,10 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 
 ## Table of Contents
 
-- [Getting Started](#🏁-getting-started)
-- [Examples](#examples)
-- [Next Steps](#next-steps)
-- [FAQ](#faq)
+- [🏁 Getting Started](#getting-started)
+- [💎 Examples](#examples)
+- [🚀 Next Steps](#next-steps)
+- [🤔 FAQ](#faq)
 
 ## 🏁 Getting Started
 
@@ -78,7 +78,7 @@ pnpm flair logs --full -tag ProcessorId=swap-events
 pnpm flair logs --full -tag ProcessorId=swap-events --watch
 ```
 
-## Examples
+## 💎 Examples
 
 #### Get all entity types total count
 
@@ -107,7 +107,7 @@ query {
 }
 ```
 
-## Next Steps
+## 🚀 Next Steps
 
 The current flow covers a very basic indexing use-case. For more advanced ones, check the list below:
 
@@ -115,7 +115,7 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 - [calculate "Health Factor" of positions with contract factory tracking](https://github.com/flair-sdk/examples/tree/main/health-factor-with-factory-tracking) <br/>
 - [Uniswap v2 swaps with USD price for all contracts across all chains](https://github.com/flair-sdk/examples/tree/main/uniswap-v2-events-from-all-contracts-with-usd-price) <br/>
 
-## FAQ
+## 🤔 FAQ
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
 **A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm deploy` for the changes to apply on the cluster. <br/><br />
