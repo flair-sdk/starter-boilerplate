@@ -41,7 +41,7 @@ cp config.prod.json config.json
 ```
 
 <br />
-4️⃣ Deploy
+4️⃣ Deploy:
 
 ```bash
 pnpm run deploy
