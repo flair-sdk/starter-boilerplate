@@ -14,7 +14,8 @@ This repository contains boilerplate scripts, abis and schema for indexing (basi
 1️⃣ Clone this repo:
 
 ```bash
-git clone git@github.com:flair-sdk/starter-boilerplate.git
+git clone https://github.com/flair-sdk/starter-boilerplate.git my-indexer
+cd my-indexer
 ```
 
 <br /> 
