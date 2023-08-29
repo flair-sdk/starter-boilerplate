@@ -1,55 +1,55 @@
-import { blockchain, database } from 'flair-sdk';
-import { multiplex } from './multiplex';
+import { multiplex } from './multiplex'
+import { blockchain, database } from 'flair-sdk'
 
 interface Token {
-  name: string;
-  symbol: string;
-  decimals: number;
+  name: string
+  symbol: string
+  decimals: number
 }
 
 const TOKEN_FUNCTIONS_ABI: string[] = [
   'function name() view returns (string)',
   'function symbol() view returns (string)',
   'function decimals() view returns (uint8)',
-];
+]
 
 const getOrCreateToken = async function (
   chainId: number,
   address: string,
-  cache = true
+  cache = true,
 ): Promise<Token> {
   if (!chainId || !address) {
     throw new Error(
       `Missing chainId or address for getOrCreateToken: ${JSON.stringify({
         chainId,
         address,
-      })}`
-    );
+      })}`,
+    )
   }
 
   return multiplex(`token:${chainId}:${address}`, 60000, async () => {
-    const tokenId = `${chainId.toString()}:${address.toString()}`.toLowerCase();
+    const tokenId = `${chainId.toString()}:${address.toString()}`.toLowerCase()
 
-    const token = await getToken(tokenId, cache);
+    const token = await getToken(tokenId, cache)
 
     if (token && token.decimals !== undefined && token.decimals !== null) {
-      return token;
+      return token
     }
 
     const contract = await blockchain.getContract(
       chainId,
       address,
-      TOKEN_FUNCTIONS_ABI
-    );
+      TOKEN_FUNCTIONS_ABI,
+    )
 
-    const [name, symbol, decimals] = await Promise.allSettled([
+    const [name, symbol, decimals] = (await Promise.allSettled([
       contract.name(),
       contract.symbol(),
       contract.decimals(),
-    ]) as any;
+    ])) as any
 
     if (name?.reason) {
-      console.warn(`Could not fetch token name `, {
+      console.warn('Could not fetch token name ', {
         reason: name?.reason,
         reasonType: typeof name?.reason,
         reasonString: name?.reason?.toString?.(),
@@ -57,10 +57,10 @@ const getOrCreateToken = async function (
         reasonCode: name?.reason?.code,
         chainId,
         address,
-      });
+      })
     }
     if (symbol?.reason) {
-      console.warn(`Could not fetch token symbol `, {
+      console.warn('Could not fetch token symbol ', {
         reason: symbol?.reason,
         reasonType: typeof symbol?.reason,
         reasonString: symbol?.reason?.toString?.(),
@@ -68,10 +68,10 @@ const getOrCreateToken = async function (
         reasonCode: symbol?.reason?.code,
         chainId,
         address,
-      });
+      })
     }
     if (decimals?.reason) {
-      console.warn(`Could not fetch token decimals `, {
+      console.warn('Could not fetch token decimals ', {
         reason: decimals?.reason,
         reasonType: typeof decimals?.reason,
         reasonString: decimals?.reason?.toString?.(),
@@ -79,7 +79,7 @@ const getOrCreateToken = async function (
         reasonCode: decimals?.reason?.code,
         chainId,
         address,
-      });
+      })
     }
 
     return await database.upsert({
@@ -90,16 +90,16 @@ const getOrCreateToken = async function (
       name: name?.value,
       symbol: symbol?.value,
       decimals: decimals?.value || 18,
-    });
-  });
-};
+    })
+  })
+}
 
 const getToken = async function (tokenId: string, cache = true): Promise<any> {
   return await database.get({
     entityType: 'Token',
     entityId: tokenId,
     cache,
-  });
-};
+  })
+}
 
-export { getOrCreateToken, getToken };
+export { getOrCreateToken, getToken }

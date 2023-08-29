@@ -1,4 +1,4 @@
-const promises: Record<string, Promise<any>> = {};
+const promises: Record<string, Promise<any>> = {}
 
 /**
  * A utility that helps when multiple events are trying to execute the exact same function.
@@ -10,9 +10,13 @@ const promises: Record<string, Promise<any>> = {};
  *
  * @returns {any}
  */
-async function multiplex<T>(keyId: string, ttl: number, fn: () => Promise<T>): Promise<T> {
+async function multiplex<T>(
+  keyId: string,
+  ttl: number,
+  fn: () => Promise<T>,
+): Promise<T> {
   if (!promises[keyId]) {
-    promises[keyId] = fn();
+    promises[keyId] = fn()
   }
 
   // Wait for a while before deleting the promise
@@ -20,12 +24,12 @@ async function multiplex<T>(keyId: string, ttl: number, fn: () => Promise<T>): P
     //@ts-ignore: we don't need to await this value here
     if (promises[keyId]) {
       // Awaiting here helps with potential race conditions
-      await promises[keyId];
-      delete promises[keyId];
+      await promises[keyId]
+      delete promises[keyId]
     }
-  }, ttl);
+  }, ttl)
 
-  return await promises[keyId];
+  return await promises[keyId]
 }
 
-export { multiplex };
+export { multiplex }
