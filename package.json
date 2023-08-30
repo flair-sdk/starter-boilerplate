@@ -12,7 +12,7 @@
     "lint": "rome check .",
     "lint:fix": "pnpm lint --apply",
     "generate": "find ./ -type f -name '*.mustache' -exec sh -c 'mustache ./config.json \"$1\" > \"${1%.mustache}\"' _ {} \\;",
-    "deploy": "pnpm run generate && flair deploy"
+    "generate-and-deploy": "pnpm run generate && flair deploy"
   },
   "devDependencies": {
     "@types/node": "^20.3.2",
