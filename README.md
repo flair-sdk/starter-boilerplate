@@ -45,7 +45,7 @@ cp config.prod.json config.json
 4️⃣ Generate manifest.yml and deploy:
 
 ```bash
-pnpm run generate-and-deploy
+pnpm generate-and-deploy
 ```
 
 <br />
