@@ -7,6 +7,13 @@
       "enabled": false,
       "ingestionFilterGroup": "default",
       "processingFilterGroup": "default",
+      "blocksListenerEnabled": true,
+      "logsListenerEnabled": false, 
+      "emitBlocks": false,
+      "emitEvents": true,
+      "emitTransactions": false,
+      "emitInternalTransactions": false,
+      "resolveRevertReason": false,
       "sources": [
         "wss://chain-1.rpc.internal.flair.build",
         "https://chain-1.rpc.internal.flair.build"
