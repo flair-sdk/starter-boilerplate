@@ -21,11 +21,19 @@ indexers:
     enabled: {{enabled}}
     ingestionFilterGroup: {{ingestionFilterGroup}}
     processingFilterGroup: {{processingFilterGroup}}
+    logsListenerEnabled: {{logsListenerEnabled}}
+    blocksListenerEnabled: {{blocksListenerEnabled}}
+    emitEvents: {{emitEvents}}
+    emitBlocks: {{emitBlocks}}
+    emitTransactions: {{emitTransactions}}
+    emitInternalTransactions: {{emitInternalTransactions}}
+    resolveRevertReason: {{resolveRevertReason}}
     sources:
     {{#sources}}
       - endpoint: {{{.}}}
     {{/sources}}
   {{/indexers}}
+
 
 processors:
   - id: swap-events
