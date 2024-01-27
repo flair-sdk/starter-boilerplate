@@ -78,6 +78,12 @@ pnpm flair logs --full -tag ProcessorId=swap-events
 pnpm flair logs --full -tag ProcessorId=swap-events --watch
 ```
 
+<br />
+7️⃣ Explore the data in playground:
+<br />
+
+Visit the [playground](https://api.flair.build) and run the following query in Examples section.
+
 ## Examples
 
 #### Get all entity types total count
@@ -118,4 +124,4 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 ## FAQ
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
-**A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm deploy` for the changes to apply on the cluster. <br/><br />
+**A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm generate-and-deploy` for the changes to apply on the cluster. <br/><br />
