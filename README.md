@@ -89,7 +89,7 @@ Visit the [playground](https://api.flair.build) and run the following query in E
 #### Get all entity types total count
 
 - Method: `POST`
-- Endpoint: [https://graph.flair.dev/](https://graph.flair.dev/)
+- Endpoint: [https://api.flair.build/](https://api.flair.build/)
 - Headers: `X-API-KEY: <your-api-key>`
 - Body:
 
