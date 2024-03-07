@@ -1,6 +1,7 @@
 {
   "cluster": "prod",
   "namespace": "boilerplate-prod",
+  "databaseSync": false,
   "indexers": [
     {
       "chainId": 1,

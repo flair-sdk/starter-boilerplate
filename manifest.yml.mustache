@@ -21,7 +21,7 @@ indexers:
     processingFilterGroup: {{processingFilterGroup}}
     emitEvents: true
     emitBlocks: false
-    emitTransactions: false
+    emitTransactions: true
     emitInternalTransactions: false
     resolveRevertReason: false
     sources:
@@ -38,7 +38,24 @@ processors:
       - name: LOG_LEVEL
         value: "WARN"
 
-  - id: catchall-events
+  - id: basic-events
     type: event
     abi: src/abis/*.json
-    handler: src/processors/catchall-events/handler.ts
+    handler: src/processors/basic-events/handler.ts
+
+  - id: basic-transactions
+    type: transaction
+    handler: src/processors/basic-transactions/handler.ts
+
+enrichers:
+  - id: database-streaming-all
+    engine: flink
+    inputSql: ./src/database/streaming.all.sql
+
+  - id: database-full-sync-events
+    engine: flink 
+    inputSql: ./src/database/batch.events.sql
+
+  - id: database-full-sync-transactions
+    engine: flink 
+    inputSql: ./src/database/batch.transactions.sql

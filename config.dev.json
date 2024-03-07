@@ -1,6 +1,7 @@
 {
   "cluster": "dev",
   "namespace": "boilerplate-dev",
+  "databaseSync": false,
   "indexers": [
     {
       "chainId": 1,

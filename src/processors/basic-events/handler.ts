@@ -1,6 +1,6 @@
-import { database } from 'flair-sdk';
+import { database } from "flair-sdk";
 // OPTIONAL: import { blockchain } from 'flair-sdk';
-import { EventHandlerInput } from 'flair-sdk'
+import { EventHandlerInput } from "flair-sdk";
 
 export const processEvent = async (event: EventHandlerInput) => {
   // OPTIONAL: You can fetch full transaction data if you need it.
@@ -12,9 +12,8 @@ export const processEvent = async (event: EventHandlerInput) => {
 
   await database.upsert({
     // Entity type is used to group entities together.
-    // Here we're creating 1 entity per event (Transfer, Borrow, Approval, etc).
-    // If event was not parsed (e.g. no ABI) we use "UnknownEvent" as entity type.
-    entityType: event.parsed?.name || 'UnknownEvent',
+    // Here we're creating 1 entity for all events, but you can also create 1 per event.
+    entityType: "Event",
 
     // Unique ID for this entity.
     //
@@ -40,6 +39,8 @@ export const processEvent = async (event: EventHandlerInput) => {
     // txTo: transaction.to,
     txHash: event.txHash,
 
+    eventName: event.parsed?.name || "UnknownEvent",
+
     // Save all event args as-is (and for unknown events store raw topics and data)
     ...(event.parsed?.args || {
       topic0: event.log.topics?.[0],
@@ -49,4 +50,4 @@ export const processEvent = async (event: EventHandlerInput) => {
       data: event.log.data,
     }),
   });
-}
+};
