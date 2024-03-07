@@ -9,9 +9,7 @@ namespace: {{ namespace }}
 
 filterGroups:
   - id: default
-    updateStrategy: preserve
-    description: This default filter group is used for all indexers to capture
-      contract addresses you care about.
+    updateStrategy: replace
     addresses:
       - fromFile: ./contracts.csv
 
@@ -21,6 +19,11 @@ indexers:
     enabled: {{enabled}}
     ingestionFilterGroup: {{ingestionFilterGroup}}
     processingFilterGroup: {{processingFilterGroup}}
+    emitEvents: true
+    emitBlocks: false
+    emitTransactions: false
+    emitInternalTransactions: false
+    resolveRevertReason: false
     sources:
     {{#sources}}
       - endpoint: {{{.}}}
@@ -28,7 +31,14 @@ indexers:
   {{/indexers}}
 
 processors:
-  - id: swap-events
+  - id: reorg
+    type: reorg
+    handler: ./src/processors/reorg/handler.ts
+    env:
+      - name: LOG_LEVEL
+        value: "WARN"
+
+  - id: catchall-events
     type: event
-    abi: src/processors/swap-events/abi.json
-    handler: src/processors/swap-events/handler.ts
+    abi: src/abis/*.json
+    handler: src/processors/catchall-events/handler.ts

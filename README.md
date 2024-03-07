@@ -1,6 +1,6 @@
 # Indexing Starter Boilerplate
 
-This repository contains boilerplate scripts, abis and schema for indexing (basic uniswap v2 swap data)
+This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events)
 
 ## Table of Contents
 
