@@ -18,22 +18,18 @@ git clone https://github.com/flair-sdk/starter-boilerplate.git my-indexer
 cd my-indexer
 ```
 
-<br /> 
-
-### 2️⃣ Install packages and authenticate:
+### 2️⃣ Install and authenticate:
 
 ```bash
 pnpm i
 pnpm flair auth
 ```
 
-<br /> 
+### 3️⃣ Create config.json and set your namespace:
 
-### 3️⃣ Set the namespace and config.json:
+There are [`config.dev.json`](./config.dev.json) and [`config.prod.json`](./config.prod.json) sample configs for `dev` and `prod` clusters.
 
-`config.dev.json` and `config.prod.json` are sample configs for `dev` and `prod` clusters.
-
-Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`) and then run:
+Set a globally unique namespace in each config file (recommended to use `{ORG_NAME}-{ENV}`; e.g `sushiswap-dev` or `sushiswap-prod`):
 
 ```bash
 # Setting configs for dev testing
@@ -43,17 +39,13 @@ cp config.dev.json config.json
 cp config.prod.json config.json
 ```
 
-<br /> 
-
-### 4️⃣ Generate manifest.yml and deploy:
+### 4️⃣ Deploy your indexer:
 
 ```bash
 pnpm generate-and-deploy
 ```
 
-<br /> 
-
-### 5️⃣ Backfill certain contracts or block ranges:
+### 5️⃣ Backfill some historical data:
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
@@ -70,28 +62,30 @@ pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address
 pnpm flair backfill --chain 1 --provisioned --max-executors 10 --max-blocks 100m --address-csv ./contracts.csv 
 ```
 
-<br />
-
 ### 6️⃣ Look at the logs:
 
 ```bash
+pnpm flair logs --full --watch
+
 pnpm flair logs --full -tag Level=error
 pnpm flair logs --full -tag Level=warn
 
 pnpm flair logs --full -tag ProcessorId=basic-events
 pnpm flair logs --full -tag ProcessorId=basic-transactions --watch
-
 pnpm flair logs --full -tag TransactionHash=0x0000000000000000...
 ```
 
 <br />
 
-### 7️⃣ Explore your data in the playground:
+### 🔵 Explore your data in the playground:
+
+Visit the [playground](https://api.flair.build) and run the following query in [Examples](#examples) section.
+
 <br />
 
-Visit the [playground](https://api.flair.build) and run the following query in Examples section.
+### 🟢 Sync the data to your own database:
 
-### 8️⃣ Sync the data to your own MongoDB (or others) database:
+> This example is for MongoDB, check out the [Database docs](https://docs.flair.dev/reference/database) for other databases.
 
 1. Add your credentaials as a secret:
 ```bash
@@ -108,7 +102,9 @@ pnpm flair enricher trigger database-full-sync-events
 pnpm flair enricher trigger database-full-sync-transactions
 ```
 
-## Examples
+<br />
+
+# Examples
 
 #### Get all entity types total count
 
@@ -139,11 +135,7 @@ query {
 
 ## Next Steps
 
-The current flow covers a very basic indexing use-case. For more advanced ones, check the list below:
-
-- [Aggregate protocol fees in USD across multiple chains](https://github.com/flair-sdk/examples/tree/main/aggregate-protocol-fees-in-usd) <br/>
-- [calculate "Health Factor" of positions with contract factory tracking](https://github.com/flair-sdk/examples/tree/main/health-factor-with-factory-tracking) <br/>
-- [Uniswap v2 swaps with USD price for all contracts across all chains](https://github.com/flair-sdk/examples/tree/main/uniswap-v2-events-from-all-contracts-with-usd-price) <br/>
+The current flow covers a very basic indexing use-case. For more advanced ones, check out the [flair-sdk/examples](https://github.com/flair-sdk/examples) repository.
 
 ## FAQ
 
