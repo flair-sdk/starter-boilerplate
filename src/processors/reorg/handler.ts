@@ -43,29 +43,56 @@ export async function processReorg({ reorg }: ReorgHandlerInput) {
   await graph.run(deleteMutation);
 
   // 2) Schedule an on-demand backfill for this block number so that it forces re-processing with the new fork index
-  const backfillMutation = `
+  const backfillEvents = `
     mutation {
-        backfillEvents(
-            tagKey: "reorg"
-            cluster: "${process.env.CLUSTER}"
-            chainId: ${reorg.chainId}
-            startBlockNumber: "${reorg.newBlock.number}"
-            endBlockNumber: "${reorg.newBlock.number}"
-            skipCaching: true
-        ) {
-            id
-            request
-        
-            createdAt
-            startedAt
-            updatedAt
-        
-            orchestrationState
-            orchestrationError
-        }
+      backfillEvents(
+        tagKey: "reorg"
+        cluster: "${process.env.CLUSTER}"
+        chainId: ${reorg.chainId}
+        startBlockNumber: "${reorg.newBlock.number}"
+        endBlockNumber: "${reorg.newBlock.number}"
+        skipCaching: true
+      ) {
+        id
+        request
+    
+        createdAt
+        startedAt
+        updatedAt
+    
+        orchestrationState
+        orchestrationError
+      }
     }
   `;
 
-  console.debug("Scheduling backfill: ", { backfillMutation });
-  await graph.run(backfillMutation);
+  console.debug("Scheduling backfill for events: ", { backfillEvents });
+  await graph.run(backfillEvents);
+  
+  // 3) Schedule an on-demand backfill for this block number so that it forces re-processing with the new fork index
+  const backfillTransactions = `
+    mutation {
+      backfillTransactions(
+        tagKey: "reorg"
+        cluster: "${process.env.CLUSTER}"
+        chainId: ${reorg.chainId}
+        startBlockNumber: "${reorg.newBlock.number}"
+        endBlockNumber: "${reorg.newBlock.number}"
+        skipCaching: true
+      ) {
+        id
+        request
+    
+        createdAt
+        startedAt
+        updatedAt
+    
+        orchestrationState
+        orchestrationError
+      }
+    }
+  `;
+
+  console.debug("Scheduling backfill for transactions: ", { backfillTransactions });
+  await graph.run(backfillTransactions);
 };
