@@ -2,19 +2,19 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^20.3.2
-  flair-cli: ^1.31.5
-  flair-sdk: ^1.5.1
+  flair-cli: ^1.31.6
+  flair-sdk: ^1.5.4
   mustache: ^4.2.0
   prettier: ^3.0.3
   rome: ^12.1.3
   typescript: ^5.1.6
 
 dependencies:
-  flair-sdk: 1.5.1_typescript@5.2.2
+  flair-sdk: 1.5.4_typescript@5.2.2
 
 devDependencies:
   '@types/node': 20.5.6
-  flair-cli: 1.31.5_pgrhsryyof7enmmjnqsueffn4e
+  flair-cli: 1.31.6_pgrhsryyof7enmmjnqsueffn4e
   mustache: 4.2.0
   prettier: 3.0.3
   rome: 12.1.3
@@ -1623,8 +1623,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /flair-cli/1.31.5_pgrhsryyof7enmmjnqsueffn4e:
-    resolution: {integrity: sha512-atNSfZ1lbPo31q6dd2vO4kz0TZg8ZPqQjTiwV+jd+ulZFXSjFB3fwtlqeiFDpYCIS34YhWoqPK0p9IQbNK9enA==}
+  /flair-cli/1.31.6_pgrhsryyof7enmmjnqsueffn4e:
+    resolution: {integrity: sha512-WVX6ZiAL7GspamtmPVbVvoIOi7Xt8uaEOm7xayzIZRYjOnXBx8M6IBH25THzDe5gfbKViKuRnHjAhic0TxUisw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -1677,8 +1677,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /flair-sdk/1.5.1_typescript@5.2.2:
-    resolution: {integrity: sha512-5hZj2tZSOMPzFyphjfnPWf4xeXUflDsDUFJsMzIvAGNurbhuT5/dPLFUg5QTWbXRXGbvTsZjIkyHcUzOkQVnCQ==}
+  /flair-sdk/1.5.4_typescript@5.2.2:
+    resolution: {integrity: sha512-Ic6NbgMP21YbASereHxwFdAEPr6nL0nveaa8C9ZbW25Ra9gF8sN3QP9TscQD8Tr73XiiCyRlwoepSSnlXEUbXQ==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:

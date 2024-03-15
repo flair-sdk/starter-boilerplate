@@ -17,12 +17,12 @@ indexers:
   {{#indexers}}
   - chainId: {{chainId}}
     enabled: {{enabled}}
-    ingestionFilterGroup: {{ingestionFilterGroup}}
-    processingFilterGroup: {{processingFilterGroup}}
+    ingestionFilterGroup: default
+    processingFilterGroup: default
     emitEvents: true
     emitBlocks: false
     emitTransactions: true
-    emitInternalTransactions: false
+    emitTraces: false
     resolveRevertReason: false
     sources:
     {{#sources}}
