@@ -50,10 +50,7 @@ pnpm generate-and-deploy
 ### 5️⃣ Backfill some historical data:
 
 ```bash
-# Index last recent 10,000 blocks of a contract like this:
-pnpm flair backfill --chain 1 --address 0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc --max-blocks 10000
-
-# Or you can backfill for a specific block number, for all relevant events and transactions:
+# You can backfill for a specific block number, for all relevant events and transactions:
 pnpm flair backfill --chain 1 -b 17998797
 
 # Or backfill for the recent data of your contracts in the last 5 minutes:
