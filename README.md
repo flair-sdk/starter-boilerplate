@@ -58,6 +58,10 @@ pnpm flair backfill --chain 1 -b 17998797
 
 # Or backfill for the recent data of your contracts in the last 5 minutes:
 pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address-csv ./contracts.csv 
+
+# Sync backfilled historical data to your database
+pnpm flair enricher trigger database-full-sync-events
+pnpm flair enricher trigger database-full-sync-transactions
 ```
 
 ### 6️⃣ Look at the logs:
@@ -77,15 +81,6 @@ pnpm flair logs --full -tag TransactionHash=0x0000000000000000...
 ### 🔵 Explore your data in the playground:
 
 Visit the [playground](https://api.flair.build) and run the following query in [Examples](#examples) section.
-
-<br />
-
-### 🟢 Sync historical data to your own database:
-
-```bash
-pnpm flair enricher trigger database-full-sync-events
-pnpm flair enricher trigger database-full-sync-transactions
-```
 
 <br />
 
