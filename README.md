@@ -2,7 +2,8 @@
 
 [![Flair](https://img.shields.io/badge/Powered%20by-Flair-ff69b4)](https://flair.dev)
 
-This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions) and syncing it to your own database (e.g MongoDB)
+This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions) and syncing it to your own database.
+> This example is for MongoDB, check out the [Database docs](https://docs.flair.dev/reference/database) for other databases.
 
 ## Table of Contents
 
@@ -20,11 +21,13 @@ git clone https://github.com/flair-sdk/starter-boilerplate.git my-indexer
 cd my-indexer
 ```
 
-### 2️⃣ Install and authenticate:
+### 2️⃣ Install, authenticate and set secrets:
 
 ```bash
 pnpm i
 pnpm flair auth
+
+pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
 ```
 
 ### 3️⃣ Create config.json and set your namespace:
@@ -78,20 +81,8 @@ Visit the [playground](https://api.flair.build) and run the following query in [
 
 <br />
 
-### 🟢 Sync the data to your own database:
+### 🟢 Sync historical data to your own database:
 
-> This example is for MongoDB, check out the [Database docs](https://docs.flair.dev/reference/database) for other databases.
-
-1. Add your credentaials as a secret:
-```bash
-pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
-```
-
-2. Update the `config.json` to set `"databaseSync": true`
-
-3. Run `pnpm generate-and-deploy` to enable the real-time syncing.
-
-4. If you have some already-indexed but not-yet synced data, you can trigger manual syncs like:
 ```bash
 pnpm flair enricher trigger database-full-sync-events
 pnpm flair enricher trigger database-full-sync-transactions
