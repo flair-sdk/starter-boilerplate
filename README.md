@@ -72,7 +72,6 @@ pnpm flair logs --full -tag ProcessorId=basic-events
 pnpm flair logs --full -tag ProcessorId=basic-transactions --watch
 pnpm flair logs --full -tag TransactionHash=0x0000000000000000...
 ```
-
 <br />
 
 ### 🔵 Explore your data in the playground:
