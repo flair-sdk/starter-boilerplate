@@ -2,7 +2,7 @@
 
 [![Flair](https://img.shields.io/badge/Powered%20by-Flair-ff69b4)](https://flair.dev)
 
-This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions)
+This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions) and syncing it to your own database (e.g MongoDB)
 
 ## Table of Contents
 
