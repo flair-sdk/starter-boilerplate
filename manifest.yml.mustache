@@ -30,33 +30,16 @@ indexers:
     {{/sources}}
   {{/indexers}}
 
-processors:
-  - id: reorg
-    type: reorg
-    handler: ./src/processors/reorg/handler.ts
-    env:
-      - name: LOG_LEVEL
-        value: "WARN"
-
-  - id: basic-events
-    type: event
-    abi: src/abis/*.json
-    handler: src/processors/basic-events/handler.ts
-
-  - id: basic-transactions
-    type: transaction
-    abi: src/abis/*.json
-    handler: src/processors/basic-transactions/handler.ts
-
-enrichers:
-  - id: database-streaming-all
-    engine: flink
-    inputSql: ./src/database/streaming.all.sql
-
-  - id: database-full-sync-events
-    engine: flink 
-    inputSql: ./src/database/batch.events.sql
-
-  - id: database-full-sync-transactions
-    engine: flink 
-    inputSql: ./src/database/batch.transactions.sql
+solutions:
+  - source: '@flair-sdk/solution-basic-events-txs'
+    config:
+      events:
+        enabled: true
+      transactions:
+        enabled: true
+  - source: '@flair-sdk/solution-database-mongodb'
+    config:
+      schema:
+        - src/schemas/*.yml
+      connectionUri: '{{{ mongoUri }}}'
+      databaseName: flair

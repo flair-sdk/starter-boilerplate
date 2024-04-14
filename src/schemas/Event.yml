@@ -1,0 +1,22 @@
+Event:
+  entityId: STRING
+  entityUpdatedAt: INT64
+  chainId: INT64
+  contractAddress: STRING
+  horizon: STRING
+  blockNumber: INT64
+  blockTimestamp: INT64
+  forkIndex: INT64
+  transactionIndex: INT64
+  logIndex: INT64
+  localIndex: INT64
+  txHash: STRING
+  approved: STRING
+  eventName: STRING
+  owner: STRING
+  tokenId: INT256
+  from: STRING
+  to: STRING
+  operator: STRING
+  newOwner: STRING
+  previousOwner: STRING
