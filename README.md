@@ -1,6 +1,6 @@
 # Indexing Starter Boilerplate
 
-This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events)
+This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions)
 
 ## Table of Contents
 
