@@ -1,5 +1,7 @@
 # Indexing Starter Boilerplate
 
+[![Flair](https://img.shields.io/badge/Powered%20by-Flair-ff69b4)](https://flair.dev)
+
 This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions)
 
 ## Table of Contents
