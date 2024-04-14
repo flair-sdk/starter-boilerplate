@@ -51,17 +51,13 @@ pnpm generate-and-deploy
 
 ```bash
 # Index last recent 10,000 blocks of a contract like this:
-pnpm flair backfill --chain 1 --address 0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc -d backward --max-blocks 10000
+pnpm flair backfill --chain 1 --address 0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc --max-blocks 10000
 
 # Or you can backfill for a specific block number, for all relevant events and transactions:
 pnpm flair backfill --chain 1 -b 17998797
 
 # Or backfill for the recent data of your contracts in the last 5 minutes:
 pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address-csv ./contracts.csv 
-
-# Or full history of addresses in a CSV, from contract creation to max of 100 million blocks after:
-# Remember since this is a large backfill we must use "--provisioned" flag.
-pnpm flair backfill --chain 1 --provisioned --max-executors 10 --max-blocks 100m --address-csv ./contracts.csv 
 ```
 
 ### 6️⃣ Look at the logs:
