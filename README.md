@@ -4,6 +4,7 @@
 [![join chat](https://img.shields.io/badge/Telegram-join%20chat-blue)](https://t.me/+fi_iZOg0ltBmMzU0)
 
 This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions) and syncing it to your own database.
+
 > This example is for MongoDB, check out the [Database docs](https://docs.flair.dev/reference/database) for other databases.
 
 ## Table of Contents
@@ -19,16 +20,17 @@ This repository contains boilerplate scripts, abis and schema for indexing (catc
 
 ```bash
 git clone https://github.com/flair-sdk/starter-boilerplate.git my-indexer
-cd my-indexer
+cd my-indexer && pnpm i
 ```
 
-### 2️⃣ Install, authenticate and set secrets:
+or open in gitpod:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/flair-sdk/starter-boilerplate)
+
+### 2️⃣ Authenticate and set secrets:
 
 ```bash
-pnpm i
 pnpm flair auth
-
-pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
 ```
 
 ### 3️⃣ Create config.json and set your namespace:
@@ -58,11 +60,7 @@ pnpm generate-and-deploy
 pnpm flair backfill --chain 1 -b 17998797
 
 # Or backfill for the recent data of your contracts in the last 5 minutes:
-pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address-csv ./contracts.csv 
-
-# Sync backfilled historical data to your database
-pnpm flair enricher trigger database-full-sync-events
-pnpm flair enricher trigger database-full-sync-transactions
+pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address-csv ./contracts.csv
 ```
 
 ### 6️⃣ Look at the logs:
@@ -77,6 +75,7 @@ pnpm flair logs --full -tag ProcessorId=basic-events
 pnpm flair logs --full -tag ProcessorId=basic-transactions --watch
 pnpm flair logs --full -tag TransactionHash=0x0000000000000000...
 ```
+
 <br />
 
 ### 🔵 Explore your data in the playground:
@@ -122,3 +121,10 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
 **A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm generate-and-deploy` for the changes to apply on the cluster. <br/><br />
+
+**Q:** How do I configure MongoDB?
+**A:**: Run the below command in terminal:
+
+```bash
+pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
+```
