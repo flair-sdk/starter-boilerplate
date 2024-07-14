@@ -31,7 +31,7 @@ or open in gitpod:
 pnpm flair auth
 ```
 
-### 3️⃣ Create config.json and set your namespace:
+### 3️⃣ Config and ABI:
 
 There are [`config.dev.json`](./config.dev.json) and [`config.prod.json`](./config.prod.json) sample configs for `dev` and `prod` clusters.
 
@@ -44,6 +44,8 @@ cp config.dev.json config.json
 # Or setting it for production
 cp config.prod.json config.json
 ```
+
+Also add the ABI of your contract under `src/abis/abi.json`.
 
 ### 4️⃣ Deploy your indexer:
 
