@@ -11,12 +11,12 @@ Event:
   logIndex: INT64
   localIndex: INT64
   txHash: STRING
-  approved: STRING
   eventName: STRING
-  owner: STRING
-  tokenId: INT256
   from: STRING
   to: STRING
+  tokenId: INT256
+  approved: STRING
+  owner: STRING
   operator: STRING
   newOwner: STRING
   previousOwner: STRING

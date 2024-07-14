@@ -5,8 +5,6 @@
 
 This repository contains boilerplate scripts, abis and schema for indexing (catch all contract events/transactions) and syncing it to your own database.
 
-> This example is for MongoDB, check out the [Database docs](https://docs.flair.dev/reference/database) for other databases.
-
 ## Table of Contents
 
 - [🏁 Getting Started](#getting-started)
@@ -127,4 +125,10 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 
 ```bash
 pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
+```
+
+You can also manually define the schema under `src/schemas` or by running the below command:
+
+```bash
+pnpm flair util infer-schema
 ```
