@@ -120,8 +120,8 @@ The current flow covers a very basic indexing use-case. For more advanced ones, 
 **Q:** How do I enable/disable real-time ingestion for indexer? <br />
 **A:** For each indexer defined in `config.json`, you can enable/disable it via the `enabled: true/false` flag. Remember to run `pnpm generate-and-deploy` for the changes to apply on the cluster. <br/><br />
 
-**Q:** How do I configure MongoDB?
-**A:**: Run the below command in terminal:
+**Q:** How do I configure MongoDB?<br />
+**A:** Run the below command in terminal:
 
 ```bash
 pnpm flair secret set -n mongodb.uri -v mongodb+srv://USERNAME:PASSWORD@HOST:PORT/DB_NAME
