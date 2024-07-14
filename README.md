@@ -58,7 +58,7 @@ pnpm generate-and-deploy
 pnpm flair backfill --chain 1 -b 17998797
 
 # Or backfill for the recent data of your contracts in the last 5 minutes:
-pnpm flair backfill --chain 1 --min-timestamp="5 mins ago" -d backward --address-csv ./contracts.csv
+pnpm flair backfill --chain 1 --min-timestamp="5 mins ago"
 ```
 
 ### 6️⃣ Look at the logs:
