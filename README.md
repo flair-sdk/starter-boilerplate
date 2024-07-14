@@ -25,7 +25,7 @@ cd my-indexer && pnpm i
 
 or open in gitpod:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/flair-sdk/starter-boilerplate)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/flair-sdk/starter-boilerplate)
 
 ### 2️⃣ Authenticate and set secrets:
 
