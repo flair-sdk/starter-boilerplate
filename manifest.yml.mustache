@@ -30,6 +30,11 @@ indexers:
     {{/sources}}
   {{/indexers}}
 
+processors:
+  - id: reorg
+    type: reorg
+    handler: ./src/processors/reorg/handler.ts
+
 solutions:
   - source: '@flair-sdk/solution-basic-events-txs'
     config:

@@ -18,15 +18,15 @@
   },
   "devDependencies": {
     "@types/node": "^20.3.2",
-    "flair-cli": "^1.42.8",
+    "flair-cli": "^1.45.1",
     "mustache": "^4.2.0",
     "prettier": "^3.0.3",
     "rome": "^12.1.3",
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@flair-sdk/solution-basic-events-txs": "^0.1.13",
-    "@flair-sdk/solution-database-mongodb": "^0.1.6",
-    "flair-sdk": "^1.12.8"
+    "@flair-sdk/solution-basic-events-txs": "^0.1.16",
+    "@flair-sdk/solution-database-mongodb": "^0.3.2",
+    "flair-sdk": "^1.13.2"
   }
 }
